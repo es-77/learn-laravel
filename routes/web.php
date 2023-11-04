@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 // Route::view('/welcome', 'welcome', $passData = "data");
 // Route::get('/anchor_tag', function () {
-//     return view('anchor_tag');
+//     return view('anchors.anchor_tag');
 // });
 // Route::post('/post', function (Request $request) {
 //     return dd($request);
@@ -40,6 +40,27 @@ Route::get('/', function () {
 //     return dd($request, $id, $name);
 // });
 // route contstrains 
-Route::get('/posts/{id?}/{name?}', function (Request $request, $id = null, $name = null) {
-    return dd($request, $id, $name);
-})->whereNumber('id')->whereAlpha('name');
+// Route::get('/posts/{id?}/{name?}', function (Request $request, $id = null, $name = null) {
+//     return dd($request, $id, $name);
+// })->whereNumber('id')->whereAlpha('name');
+
+// route name 
+
+// Route::get('/anchors/page', function () {
+//     return view('anchors.anchor_tag');
+// })->name('anchor');
+// Route::get('/anchors/another/page', function () {
+//     return view('anchors.another_anchor_page');
+// })->name('another_anchor');
+
+// route group 
+Route::prefix('anchors')->group(function () {
+    Route::get('/page', function () {
+        return view('anchors.anchor_tag');
+    })->name('anchor');
+    Route::get('/another/page', function () {
+        return view('anchors.another_anchor_page');
+    })->name('another_anchor');
+});
+// route redirect
+Route::redirect('anchor_page_redirct', '/anchors/page', 302);
