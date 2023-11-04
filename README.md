@@ -71,3 +71,30 @@ laravel blade file one view add another view
 @includeUnless("condition value true/false","view file name",$dataPass="pass any data")
 
 ```
+
+make template inhertenance
+make main page in any where you want
+header footer sider bar
+include them into main layout
+file path
+resources\views\template_inhertenances\main.blade.php
+resources\views\template_inhertenances\footer.blade.php
+resources\views\template_inhertenances\header.blade.php
+resources\views\template_inhertenances\nav_bar.blade.php
+resources\views\template_inhertenances\sidebar.blade.php
+resources\views\template_inhertenances\dasbord.blade.php
+resources\views\template_inhertenances\page1.blade.php
+use sentext
+
+```php
+    @extends('template_inhertenances.main')
+    @section('title')
+        page 1
+    @endsection
+
+    @section('content')
+        <p>page 1 blade file </p>
+    @endsection
+
+
+```
