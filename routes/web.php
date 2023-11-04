@@ -54,13 +54,17 @@ Route::get('/', function () {
 // })->name('another_anchor');
 
 // route group 
-Route::prefix('anchors')->group(function () {
-    Route::get('/page', function () {
-        return view('anchors.anchor_tag');
-    })->name('anchor');
-    Route::get('/another/page', function () {
-        return view('anchors.another_anchor_page');
-    })->name('another_anchor');
-});
+// Route::prefix('anchors')->group(function () {
+//     Route::get('/page', function () {
+//         return view('anchors.anchor_tag');
+//     })->name('anchor');
+//     Route::get('/another/page', function () {
+//         return view('anchors.another_anchor_page');
+//     })->name('another_anchor');
+// });
 // route redirect
-Route::redirect('anchor_page_redirct', '/anchors/page', 302);
+// Route::redirect('anchor_page_redirct', '/anchors/page', 302);
+
+Route::get('blade', function () {
+    return view('blades.basic');
+});
