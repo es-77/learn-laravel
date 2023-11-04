@@ -68,11 +68,27 @@ Route::get('/', function () {
 // Route::get('blade', function () {
 //     return view('blades.basic');
 // });
-Route::prefix('blade_template_main')->group(function () {
-    Route::get('/a', function () {
-        return view('blade_template_main.a');
+// Route::prefix('blade_template_main')->group(function () {
+//     Route::get('/a', function () {
+//         return view('blade_template_main.a');
+//     });
+//     Route::get('/b', function () {
+//         return view('blade_template_main.b');
+//     });
+// });
+
+// template inhertenance 
+Route::prefix('template_inhertenances')->group(function () {
+    Route::get('/page1', function () {
+        return view('template_inhertenances.page1');
     });
-    Route::get('/b', function () {
-        return view('blade_template_main.b');
+    Route::get('/page2', function () {
+        return view('template_inhertenances.page2');
+    });
+    Route::get('/dasbord', function () {
+        return view('template_inhertenances.dasbord');
+    });
+    Route::get('/main', function () {
+        return view('template_inhertenances.main');
     });
 });
