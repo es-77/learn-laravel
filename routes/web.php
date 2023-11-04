@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::view('/welcome', 'welcome', $passData = "data");
+Route::get('/anchor_tag', function () {
+    return view('anchor_tag');
+});
+Route::post('/post', function (Request $request) {
+    return dd($request);
 });
