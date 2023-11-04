@@ -238,6 +238,28 @@ php artisan make:controller ResourceController --resource
 
 // create migration
 
+    | Key | Value |
+    |---|---|
+    | NOT NULL | $table-›string('email')->nullable(); |
+    | UNIQUE | $table->string('email')->unique(); or $table-›unique('email'); |
+    | DEFAULT | $table->string('city')->default('Agra'); |
+    | PRIMARY KEY | Stable-›primary('user_id'); |
+    | FOREIGN KEY | Stable->foreign(user id'->references(id')->on('users'); |
+
+// another
+
+| Modifier                | Description                                                                |
+| ----------------------- | -------------------------------------------------------------------------- |
+| ->after('column')       | Place the column "after" another column (MySQL).                           |
+| ->autolncrement()       | Set INTEGER columns as auto-incrementing (primary key).                    |
+| ->comment('my comment') | Add a comment to a column (MySQL/PostgreSQL).                              |
+| ->first()               | Place the column "first" in the table (MySQL).                             |
+| ->from($integer)        | Set the starting value of an auto-incrementing field (MySQL / PostgreSQL). |
+| ->invisible()           | Make the column "invisible to SELECT \* queries (MySQL)".                  |
+| ->unsigned()            | Set INTEGER columns as UNSIGNED (MySQL).                                   |
+| ->useCurrent()          | Set TIMESTAMP columns to use CURRENT_TIMESTAMP as default value            |
+| ->useCurrentOnUpdate()  | Set TIMESTAMP columns to use CURRENT_TIMESTAMP when a record is updated    |
+
 ```php
     //it create the table with tests name
     php artisan make:migration create_tests_table
@@ -290,28 +312,6 @@ php artisan make:controller ResourceController --resource
     if (Schema::hasColumn('users', 'email')) {
     // The "users" table exists and has an "email" column...
     };
-    | Key | Value |
-    |---|---|
-    | NOT NULL | $table-›string('email')->nullable(); |
-    | UNIQUE | $table->string('email')->unique(); or $table-›unique('email'); |
-    | DEFAULT | $table->string('city')->default('Agra'); |
-    | PRIMARY KEY | Stable-›primary('user_id'); |
-    | FOREIGN KEY | Stable->foreign(user id'->references(id')->on('users'); |
-
-
-// another
-
-| Modifier | Description |
-|---|---|---|
-| ->after('column') | Place the column "after" another column (MySQL). |
-| ->autolncrement() | Set INTEGER columns as auto-incrementing (primary key). |
-| ->comment('my comment') | Add a comment to a column (MySQL/PostgreSQL). |
-| ->first() | Place the column "first" in the table (MySQL). |
-| ->from($integer) | Set the starting value of an auto-incrementing field (MySQL / PostgreSQL). |
-| ->invisible() | Make the column "invisible to SELECT * queries (MySQL)". |
-| ->unsigned() | Set INTEGER columns as UNSIGNED (MySQL). |
-| ->useCurrent() | Set TIMESTAMP columns to use CURRENT_TIMESTAMP as default value |
-| ->useCurrentOnUpdate() | Set TIMESTAMP columns to use CURRENT_TIMESTAMP when a record is updated
 
 
 example
