@@ -23,17 +23,17 @@ route chain methods id must be integer name must be string
 
 ```
 
-Property Description
-Sloop->index The index of the current loop iteration (starts at 0).
-Sloop->iteration The current loop iteration (starts at 1).
-Sloop->remaining The iterations remaining in the loop.
-Sloop->count The total number of items in the array being iterated.
-Sloop->first Whether this is the first iteration through the loop.
-Sloop-›last Whether this is the last iteration through the loop.
-Sloop-›even Whether this is an even iteration through the loop.
-Sloop->odd Whether this is an odd iteration through the loop.
-Sloop->depth The nesting level of the current loop.
-Clean sharant
+| Property         | Description                                            |
+| ---------------- | ------------------------------------------------------ |
+| Sloop->index     | The index of the current loop iteration (starts at 0). |
+| Sloop->iteration | The current loop iteration (starts at 1).              |
+| Sloop->remaining | The iterations remaining in the loop.                  |
+| Sloop->count     | The total number of items in the array being iterated. |
+| Sloop->first     | Whether this is the first iteration through the loop.  |
+| Sloop->last      | Whether this is the last iteration through the loop.   |
+| Sloop->even      | Whether this is an even iteration through the loop.    |
+| Sloop->odd       | Whether this is an odd iteration through the loop.     |
+| Sloop->depth     | The nesting level of the current loop.                 |
 
 ```
 php
