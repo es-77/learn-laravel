@@ -1,19 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-@include('template_inhertenances.header')
-
-<body>
-    <main style="min-height: calc(100vh - 58px);">
-        <div class="container pt-4">
-            @yield('content')
-        </div>
-    </main>
-    @include('template_inhertenances.footer')
-</body>
-
-</html> --}}
-
-
 <!DOCTYPE html>
 <html lang="en">
 
