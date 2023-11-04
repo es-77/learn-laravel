@@ -60,3 +60,14 @@ foreach([1,2,3,4,5,6] as $num){
 }
 
 ```
+
+laravel blade file one view add another view
+
+```php
+@include('file_namne',$dataPass = "pass any data to this view");
+
+@includeWhen("condition value true/false","view file name",$dataPass="pass any data")
+
+@includeUnless("condition value true/false","view file name",$dataPass="pass any data")
+
+```

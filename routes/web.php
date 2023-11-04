@@ -65,6 +65,14 @@ Route::get('/', function () {
 // route redirect
 // Route::redirect('anchor_page_redirct', '/anchors/page', 302);
 
-Route::get('blade', function () {
-    return view('blades.basic');
+// Route::get('blade', function () {
+//     return view('blades.basic');
+// });
+Route::prefix('blade_template_main')->group(function () {
+    Route::get('/a', function () {
+        return view('blade_template_main.a');
+    });
+    Route::get('/b', function () {
+        return view('blade_template_main.b');
+    });
 });
