@@ -235,3 +235,128 @@ php artisan make:controller ResourceController --resource
 
 
 ```
+
+// create migration
+
+```php
+    //it create the table with tests name
+    php artisan make:migration create_tests_table
+    //run migrations
+    php artisan migration
+    //roll back last migration
+    php artisan migration:rollback
+    //roll back  migration give how much
+    php artisan migration:rollback --step=5
+    //migration status how much migration run pending
+    php artisan migration:status
+    //migration reset
+    php artisan migration:reset
+    //migration and seed run
+    php artisan migration --seed
+    //migration refresh
+    php artisan migration:refresh
+    or
+    php artisan migration:refresh --seed
+    //migration fresh
+    php artisan migration:fresh
+    or
+    php artisan migration:fresh --seed
+
+    //update exist table
+    php artisan migration:update_test_table --table=tests
+
+    $table->renameColumn('from', 'to');
+    //not work in
+    //MySQL < 8.0.3
+    //MariaDB < 10.5.2
+
+    $table-›dropColumn('city');
+    $table-›dropColumn(['city', 'avatar', 'location']);
+    $table->string('name', 50)->change();
+    $table-integer('votes')-unsigned()->default(1)->comment("my comment")
+
+    Change Column Order
+
+    $table->after('password', function (Blueprint Stable) {
+    $table->string('address');
+    $table->string('city');
+    });
+
+    $table->drop ('users');
+    Schema::droplfExists("users");
+    if (Schema::hasTable('users')) {
+    // The "users" table exists…
+    };
+    if (Schema::hasColumn('users', 'email')) {
+    // The "users" table exists and has an "email" column...
+    };
+    | Key | Value |
+    |---|---|
+    | NOT NULL | $table-›string('email')->nullable(); |
+    | UNIQUE | $table->string('email')->unique(); or $table-›unique('email'); |
+    | DEFAULT | $table->string('city')->default('Agra'); |
+    | PRIMARY KEY | Stable-›primary('user_id'); |
+    | FOREIGN KEY | Stable->foreign(user id'->references(id')->on('users'); |
+
+
+// another
+
+| Modifier | Description |
+|---|---|---|
+| ->after('column') | Place the column "after" another column (MySQL). |
+| ->autolncrement() | Set INTEGER columns as auto-incrementing (primary key). |
+| ->comment('my comment') | Add a comment to a column (MySQL/PostgreSQL). |
+| ->first() | Place the column "first" in the table (MySQL). |
+| ->from($integer) | Set the starting value of an auto-incrementing field (MySQL / PostgreSQL). |
+| ->invisible() | Make the column "invisible to SELECT * queries (MySQL)". |
+| ->unsigned() | Set INTEGER columns as UNSIGNED (MySQL). |
+| ->useCurrent() | Set TIMESTAMP columns to use CURRENT_TIMESTAMP as default value |
+| ->useCurrentOnUpdate() | Set TIMESTAMP columns to use CURRENT_TIMESTAMP when a record is updated
+
+
+example
+
+Schema::table('users', function (Blueprint $table) {
+    // Add a new column after the 'email' column.
+    $table->string('phone')->after('email');
+
+    // Make the 'id' column auto-incrementing.
+    $table->integer('id')->autoIncrement();
+
+    // Add a comment to the 'name' column.
+    $table->string('name')->comment('The user\'s name');
+
+    // Place the 'created_at' column first in the table.
+    $table->timestamp('created_at')->first();
+
+    // Set the starting value of the 'id' column to 100.
+    $table->integer('id')->from(100);
+
+    // Make the 'age' column invisible to SELECT * queries.
+    $table->integer('age')->invisible();
+
+    // Make the 'price' column unsigned.
+    $table->integer('price')->unsigned();
+
+    // Set the 'created_at' and 'updated_at' columns to use CURRENT_TIMESTAMP as default value.
+    $table->timestamps()->useCurrent();
+
+    // Set the 'updated_at' column to use CURRENT_TIMESTAMP when a record is updated.
+    $table->timestamp('updated_at')->useCurrentOnUpdate();
+});
+
+
+
+
+
+
+    short hand
+    // it will create model migration controller request factory seeder resource
+    php artisan model:test -mrcRFS
+    or
+    // some extra polices etc
+    php artisan model:test -all
+
+
+
+```
