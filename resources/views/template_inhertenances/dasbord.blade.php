@@ -676,3 +676,9 @@
         </div>
     </section>
 @endsection
+
+@push('script')
+    <script>
+        alert(123);
+    </script>
+@endpush

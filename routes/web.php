@@ -92,3 +92,9 @@ Route::prefix('template_inhertenances')->group(function () {
         return view('template_inhertenances.main');
     });
 });
+
+
+// php variable use in script
+Route::get('variable',function(){
+    return view('php_varible_use_scripts.use_php_varible_script');
+});

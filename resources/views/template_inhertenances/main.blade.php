@@ -30,6 +30,7 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    @stack('css')
 
 </head>
 
@@ -51,6 +52,7 @@
     <!-- ======= Footer ======= -->
     @include('template_inhertenances.footer')
     <!-- End Footer -->
+    @stack('script')
 
 </body>
 
