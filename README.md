@@ -192,3 +192,25 @@ php
 </script>
 
 ```
+
+pass route data into variable
+
+```php
+
+Route::get('variable', function () {
+    $name = "Emmanuel saleem";
+    return view(
+        'pass_route_data.route_data_pass',
+        [
+            'user' => $name,
+            'city' => 'pakistan'
+        ]
+    );
+    // return view("pass_route_data.route_data_pass")
+    //     ->with('user', $name)
+    //     ->with('city', 'pakistan');
+    // return view('pass_route_data.route_data_pass')
+    //     ->withUser($name)
+    //     ->withCity("pakistan");
+});
+```

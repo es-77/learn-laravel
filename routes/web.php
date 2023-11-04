@@ -95,6 +95,22 @@ Route::prefix('template_inhertenances')->group(function () {
 
 
 // php variable use in script
-Route::get('variable',function(){
+Route::get('variable', function () {
     return view('php_varible_use_scripts.use_php_varible_script');
+});
+Route::get('variable', function () {
+    $name = "Emmanuel saleem";
+    return view(
+        'pass_route_data.route_data_pass',
+        [
+            'user' => $name,
+            'city' => 'pakistan'
+        ]
+    );
+    // return view("pass_route_data.route_data_pass")
+    //     ->with('user', $name)
+    //     ->with('city', 'pakistan');
+    // return view('pass_route_data.route_data_pass')
+    //     ->withUser($name)
+    //     ->withCity("pakistan");
 });
