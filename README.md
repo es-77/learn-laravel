@@ -8,12 +8,14 @@ first route file web.php
 
     php artisan route:list --path=post
 
-route chain methods id must be integer name must be string
-Route::get('/posts/{id?}/{name?}', function (Request $request, $id = null, $name = null) {
+    Route::get('/posts/{id?}/{name?}', function (Request $request, $id = null, $name = null) {
     return dd($request, $id, $name);
-})->whereNumber('id')->whereAlpha('name');
-whereNumber("id") integer
-whereAlpha("name") string
-whereAlphaNumberic("namenumber") integer and string
-whereIn('category'.['movie','song'])
-where('id','[@0-9]+')
+    })->whereNumber('id')->whereAlpha('name');
+
+    whereNumber("id") integer
+    whereAlpha("name") string
+    whereAlphaNumberic("namenumber") integer and string
+    whereIn('category'.['movie','song'])
+    where('id','[@0-9]+')
+
+route chain methods id must be integer name must be string
