@@ -213,4 +213,25 @@ Route::get('variable', function () {
     //     ->withUser($name)
     //     ->withCity("pakistan");
 });
+
+
+```
+
+controller
+
+```php
+Route::get('page_a', [PagesController::class, 'pageA']);
+Route::get('page_b', [PagesController::class, 'pageB']);
+Route::get('page_invok', PagesInvocableController::class);
+
+// it create simple controller no method
+php artisan make:controller PagesController
+// it create the invok controller
+php artisan make:controller PagesInvokController -i
+//create api controller its also create method only api method
+php artisan make:controller ApiController --api
+// create controller with there method index show udpate store destory
+php artisan make:controller ResourceController --resource
+
+
 ```

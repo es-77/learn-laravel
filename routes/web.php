@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PagesController;
+use App\Http\Controllers\PagesInvocableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -114,3 +116,9 @@ Route::get('variable', function () {
     //     ->withUser($name)
     //     ->withCity("pakistan");
 });
+
+// controller part 
+
+Route::get('page_a', [PagesController::class, 'pageA']);
+Route::get('page_b', [PagesController::class, 'pageB']);
+Route::get('page_invok', PagesInvocableController::class);
