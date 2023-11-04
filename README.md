@@ -12,10 +12,13 @@ first route file web.php
     return dd($request, $id, $name);
     })->whereNumber('id')->whereAlpha('name');
 
+route chain methods id must be integer name must be string
+
+```php
     whereNumber("id") integer
     whereAlpha("name") string
     whereAlphaNumberic("namenumber") integer and string
     whereIn('category'.['movie','song'])
     where('id','[@0-9]+')
 
-route chain methods id must be integer name must be string
+```
