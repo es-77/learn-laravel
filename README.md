@@ -360,3 +360,33 @@ Schema::table('users', function (Blueprint $table) {
 
 
 ```
+laravel websockets
+
+setups
+```php
+composer clearcache
+composer update
+composer require beyondcode/laravel-websockets:^1.14
+composer require beyondcode/laravel-websockets --with-all-dependencies
+
+//then
+
+php artisan vendor:publish --provider="BeyondCode\LaravelWebSockets\WebSocketsServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="BeyondCode\LaravelWebSockets\WebSocketsServiceProvider" --tag="config"
+```
+path config\app.php
+uncomment
+// App\Providers\BroadcastServiceProvider::class,
+
+in env file 
+
+```php
+PUSHER_APP_ID=laravel_chat
+PUSHER_APP_KEY=laravel_chatvfgfgergdg
+PUSHER_APP_SECRET=laravel_chatdfdfdfdfdf
+PUSHER_HOST=127.0.0.1
+PUSHER_PORT=6001
+PUSHER_SCHEME=https
+PUSHER_APP_CLUSTER=mt1
+
+```
