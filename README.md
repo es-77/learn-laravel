@@ -394,3 +394,58 @@ PUSHER_APP_CLUSTER=mt1
 
 php artisan websockets:serve
 ```
+
+global scope
+
+```php
+    <?php
+
+    namespace App\Models;
+
+    use App\Models\Scopes\GlobalDescendingScope;
+    use App\Support\Traits\UtcDateTimeHandling;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
+
+    class BaseTenantModel extends Model
+    {
+        use HasFactory, UtcDateTimeHandling;
+        protected static function booted()
+        {
+            self::addGlobalScope(new GlobalDescendingScope());
+        }
+    }
+
+
+    // or you can do this
+
+    public function boot(): void
+    {
+        VehicleType::addGlobalScope(new GlobalDescendingScope());
+        Vehicle::addGlobalScope(new GlobalDescendingScope());
+    }
+
+    //scope code is here
+    <?php
+
+namespace App\Models\Scopes;
+
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Scope;
+use Illuminate\Support\Facades\Schema;
+
+class GlobalDescendingScope implements Scope
+{
+    public function __construct(public $column = 'created_at'){}
+
+  public function apply(Builder $builder, Model $model)
+  {
+    if (Schema::hasColumn($model->getTable(), $this->column)) {
+        $builder->orderBy($this->column, 'desc');
+    }
+  }
+}
+
+
+```
