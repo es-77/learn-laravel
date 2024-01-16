@@ -4,6 +4,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PagesInvocableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FirebaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,3 +123,8 @@ Route::get('variable', function () {
 Route::get('page_a', [PagesController::class, 'pageA']);
 Route::get('page_b', [PagesController::class, 'pageB']);
 Route::get('page_invok', PagesInvocableController::class);
+
+// firbase real time database
+
+
+Route::get('/get-firebase-data', [FirebaseController::class, 'index'])->name('firebase.index');
