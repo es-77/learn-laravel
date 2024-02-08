@@ -449,3 +449,14 @@ class GlobalDescendingScope implements Scope
 
 
 ```
+
+```
+
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+     Artisan::call('route:clear');
+     Artisan::call('view:clear');
+    Artisan::call('config:clear');
+    return response()->json(['success' => __('cache cleared successfully')]);
+})->name('clearAllCache');
+```
