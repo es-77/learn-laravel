@@ -32,6 +32,38 @@ class FirebaseController extends Controller
                 'total_outstanding_payment' => 'limitDriver->total_limit',
                 'max_limit' => 'limit',
             ]);
+        // $this->database
+        //     ->getReference('run_time create/')
+        //     ->push([
+        //         'phone' => fake()->phoneNumber(),
+        //         // Add other fields as needed
+        //     ]);
+        // $this->database
+        //     ->getReference('my_new_run_time/')
+        //     ->push([
+        //         'phone' => fake()->phoneNumber(),
+        //         // Add other fields as needed
+        //     ]);
+        // $this->database
+        //     ->getReference('chats/' . 'group_name1')
+        //     ->push([
+        //         'phone' => fake()->phoneNumber(),
+        //         // Add other fields as needed
+        //     ]);
+        // $this->database
+        //     ->getReference('my_corrdinates/')
+        //     ->push([
+        //         'latitude' => fake()->latitude(),
+        //         'longitude' => fake()->longitude(),
+        //         // Add other fields as needed
+        //     ]);
+        // $this->database
+        //     ->getReference('my_corrdinates/')
+        //     ->uppdate([
+        //         'latitude' => 'fake()->latitude()',
+        //         'longitude' => 'fake()->longitude()',
+        //         // Add other fields as needed
+        //     ]);
 
 
         $assigned_order = $this->database
@@ -50,7 +82,7 @@ class FirebaseController extends Controller
                 'trans_order_id'  => 'trans->id',
                 'driver_id'       => 'nearestDriver->driver->unique_id_driver',
                 'vehicle_number_plate'  => 'nearestDriver->driver->vehicle_number_plate',
-                'customer_id'     => 'trans->customer->unique_id_customers',
+                'customer_id'     => random_int(1, 100),
                 'customer_name'   => 'trans->customer->fullname',
                 'location_pickup_name' => 'request->location_pickup_name',
                 'location_destination_name' => 'request->location_destination_name',

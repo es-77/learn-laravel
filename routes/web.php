@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesInvocableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirebaseController;
+use App\Http\Controllers\OutlookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -126,5 +127,12 @@ Route::get('page_invok', PagesInvocableController::class);
 
 // firbase real time database
 
+
+
+Route::get('/redirectToMicrosoftLogin', [OutlookController::class, 'redirectToMicrosoftLogin'])->name('redirectToMicrosoftLogin');
+
+Route::get('/auth/microsoft/callback', [OutlookController::class, 'handleMicrosoftLoginCallback']);
+
+Route::get('/fetchReceipts', [OutlookController::class, 'fetchReceipts']);
 
 Route::get('/get-firebase-data', [FirebaseController::class, 'index'])->name('firebase.index');
