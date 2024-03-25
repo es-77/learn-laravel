@@ -18,6 +18,8 @@ use App\Http\Controllers\OutlookController;
 |
 */
 
+require __DIR__ . '/auth2_route.php';
+
 Route::get('/', function () {
     return view('welcome');
 });

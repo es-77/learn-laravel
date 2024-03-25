@@ -190,6 +190,7 @@ class OutlookController extends Controller
                 ->with('error', 'Something goes wrong. Please try again.')
                 ->with('errorDetail', $e->getMessage());
         } catch (\Throwable $e) {
+            dd($e->getMessage());
             return redirect()->back()->with('error', "Unexcepted Error Occured. Contact Support - " . $e->getMessage());
         }
     }
